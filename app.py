@@ -94,10 +94,10 @@ def filtro():
         time_min = int(hora[3:5])
         
         userss = mongo.db.users.find({'Valor':{'$gte': valor},'date_ano' :{'$gte': data_ano}, 'date_mes' :{'$gte': data_mes},
-        'date_dia' :{'$gte': data_dia},'date_hora' :{'$gte': time_hora}, 'date_minuto' :{'$gte': time_min},  })
-        transacao = dumps(userss)   
-    return transacao
-    #return render_template('lista2.html', transacaos = listatransacaos) # ajeitar o render!!!
+        'date_dia' :{'$gte': data_dia},'date_hora' :{'$gte': time_hora}, 'date_minuto' :{'$gte': time_min}})
+        # transacao = dumps(userss)   
+    # return transacao
+    return render_template('lista2.html', userss = userss) # ajeitar o render!!!
 
 
 #---------- main / run

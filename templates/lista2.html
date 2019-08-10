@@ -5,30 +5,27 @@
         <title>Listar  Cliente</title>
     </head>
     <body>
-        <h1>Lista Filtrada</h1>
+        <h1>Lista de Clientes "Filtrada"</h1>
         <hr>
         <table border="1">
             <tr>
                 <td>ID</td>
-                <td>Data</td>
                 <td>ContaInicial</td>
                 <td>ContaFinal</td>
                 <td>Valor</td>
-
+                <td>Data("dia-mes-ano") - Hora</td>
             </tr>
-            {% for transacao in transacaos %}
+            {% for transacao in userss %}
             <tr>
-                <td>{{ transacao._id}}</td>
-                <td>{{ transacao.Date}}</td>
-                <td>{{ transacao.ContaInicial}}</td>
-                <td>{{ transacao.ContaFinal}}</td>
-                <td>{{ transacao.Valor}}</td>
-        
+                <td>{{ transacao['_id']}}</td>
+                <td>{{ transacao['ContaInicial']}}</td>
+                <td>{{ transacao['ContaFinal'] }}</td>
+                <td>{{ transacao['Valor'] }}</td>
+                <td>{{transacao['date_dia']}}-{{transacao['date_mes']}}-{{ transacao['date_ano']}}  {{transacao['date_hora']}}:{{transacao['date_minuto']}}</td>
             </tr>
             {% endfor %}
         </table>
-        <hr>
+        <hr>    
         <a href="{{url_for('index')}}">Voltar</a>
-        
     </body>
 </html>
