@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Listar  Cliente</title>
+    </head>
+    <body>
+        <h1>Lista Filtrada</h1>
+        <hr>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Data</td>
+                <td>ContaInicial</td>
+                <td>ContaFinal</td>
+                <td>Valor</td>
+
+            </tr>
+            {% for transacao in transacaos %}
+            <tr>
+                <td>{{ transacao._id}}</td>
+                <td>{{ transacao.Date}}</td>
+                <td>{{ transacao.ContaInicial}}</td>
+                <td>{{ transacao.ContaFinal}}</td>
+                <td>{{ transacao.Valor}}</td>
+        
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>
+        <a href="{{url_for('index')}}">Voltar</a>
+        
+    </body>
+</html>

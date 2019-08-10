@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Listar  Cliente</title>
+    </head>
+    <body>
+        <h1>Lista de Cliente | Deletar | Atualizar</h1>
+        <hr>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>ContaInicial</td>
+                <td>ContaFinal</td>
+                <td>Valor</td>
+                <td>Data("dia-mes-ano") - Hora</td>
+                <td>Excluir</td>
+                <td>Atualizar</td>
+            </tr>
+            {% for transacao in userss %}
+            <tr>
+                <td>{{ transacao['_id']}}</td>
+                <td>{{ transacao['ContaInicial']}}</td>
+                <td>{{ transacao['ContaFinal'] }}</td>
+                <td>{{ transacao['Valor'] }}</td>
+                <td>{{transacao['date_dia']}}-{{transacao['date_mes']}}-{{ transacao['date_ano']}}  {{transacao['date_hora']}}:{{transacao['date_minuto']}}</td>
+                <td><a href = "/deletar/{{transacao['_id']}}"> X </a></td>
+                <td><a href = "/atualizar/{{transacao['_id']}}"> Atualizar </a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <hr>    
+        <a href="{{url_for('index')}}">Voltar</a>
+    </body>
+</html>

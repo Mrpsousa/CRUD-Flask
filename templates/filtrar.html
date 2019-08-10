@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Página de Filtro</title>
+    </head>
+    <body>
+        <h1>Lista por Filtro</h1>
+        <hr>
+        <form action="{{ url_for('filtro')}}" method="POST">
+            <table>
+                <tr>
+                    <td>Data - (no formato:"2018-08-20")</td>
+                    <td><input type="text" name="Date"></td>
+                </tr>
+                <tr>
+                    <td>Horário - (no formato:"18:30")</td>
+                    <td><input type="text" name="Hora"></td>
+                </tr>
+                <tr>
+                    <td>Valor</td>
+                    <td><input type="number" name="Valor"></td>
+                </tr>
+            </table><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
+
